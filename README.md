@@ -1,51 +1,51 @@
 # 🎯 PCF InputMask
 
-Componente PCF (PowerApps Component Framework) para Power Platform / Dynamics 365 que permite aplicar máscaras de input configuráveis diretamente no campo, com suporte aos seguintes caracteres especiais:
+A PCF (PowerApps Component Framework) custom control for Power Platform / Dynamics 365 that allows configurable input masks directly on form fields. Supports the following special mask characters:
 
-- `9` → número
-- `A` → letra
-- `X` → número ou letra
-- `?` → torna o caractere **a direita** opcional
+- `9` → digit
+- `A` → letter
+- `X` → digit or letter
+- `?` → makes the **character to its right** character optional
 
 ---
 
-## 💡 Exemplo de Máscaras
+## 💡 Mask Examples
 
-| Máscara            | Aplicação                        | Exemplo de entrada            | Resultado formatado                 |
+| Mask               | Use Case                         | Input Example                 | Formatted Output                    |
 | ------------------ | -------------------------------- | ----------------------------- | ----------------------------------- |
-| `(99) ?99999-9999` | Telefone fixo/celular            | `1198761234` ou `11987651234` | `(11) 9876-1234`, `(11) 98765-1234` |
-| `AAA-9X99`         | Placa de veículo (nova e antiga) | `FRQ6G23` ou `KJR4720`        | `FRQ-6G23`, `KJR-4720`              |
+| `(99) ?99999-9999` | Landline/mobile phone numbers    | `1198761234` or `11987651234` | `(11) 9876-1234`, `(11) 98765-1234` |
+| `AAA-9X99`         | Brazilian vehicle license plates | `FRQ6G23` or `KJR4720`        | `FRQ-6G23`, `KJR-4720`              |
 
 ---
 
-## 🚀 Recursos
+## 🚀 Features
 
-- Máscara totalmente configurável via parâmetros
-- Placeholder também configurável
-- Comportamento opcional inteligente (`?`)
-- Validação da máscara malformada
-- Código limpo, performático e debuggável
-
----
-
-## 🛠️ Parâmetros do Componente
-
-| Parâmetro     | Tipo              | Uso                                   |
-| ------------- | ----------------- | ------------------------------------- |
-| `value`       | `SingleLine.Text` | Ligado ao campo do formulário (bound) |
-| `placeholder` | `SingleLine.Text` | Texto exibido como dica no input      |
-| `mask`        | `SingleLine.Text` | Máscara que será aplicada ao input    |
+- Fully configurable input mask
+- Configurable placeholder
+- Intelligent optional character handling with `?`
+- Mask validation to prevent malformed patterns
+- Clean, efficient, and debuggable code
 
 ---
 
-## 📦 Como usar
+## 🛠️ Component Parameters
 
-### 1. Crie a Solução no Power Apps
+| Parameter     | Type              | Purpose                                 |
+| ------------- | ----------------- | --------------------------------------- |
+| `value`       | `SingleLine.Text` | Binds to the form field (`bound` usage) |
+| `placeholder` | `SingleLine.Text` | Placeholder text shown inside the input |
+| `mask`        | `SingleLine.Text` | The input mask pattern                  |
 
-Adicione este controle a uma solução personalizada.
+---
 
-### 2. Publique com o Power Platform CLI
+## 📦 How to Use
+
+### 1. Add to a Power Apps Solution
+
+Include this control inside a custom solution in Power Apps.
+
+### 2. Publish using Power Platform CLI
 
 ```bash
-pac pcf push --publisher-prefix seuPrefixo
+pac pcf push --publisher-prefix yourPrefix
 ```
