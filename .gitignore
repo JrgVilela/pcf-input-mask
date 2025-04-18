@@ -1,23 +1,36 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Node modules
+node_modules/
 
-# dependencies
-/node_modules
+# Power Platform build output
+generated/
+dist/
+out/
 
-# generated directory
-**/generated
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# output directory
-/out
+# Build cache
+*.tsbuildinfo
 
-# msbuild output directories
-/bin
-/obj
+# Environment files
+.env
+.env.local
+.env.*.local
 
-# MSBuild Binary and Structured Log
-*.binlog
+# VSCode
+.vscode/
 
-# Visual Studio cache/options directory
-/.vs
-
-# macos
+# System files
 .DS_Store
+Thumbs.db
+
+# Package lock
+package-lock.json
+
+# Test outputs (caso use)
+coverage/
+
+# Webpack Dev Server files
+webpack-stats.json
