@@ -73,6 +73,10 @@ export class InputMask
     // Add code to cleanup control if necessary
   }
 
+  /**
+   * Aplica a máscara customizada no valor usando os seguintes símbolos:
+   * 9 = número, A = letra, X = número ou letra, ? = opcional
+   */
   private aplicarMascara(valor: string, mascara: string): string {
     //Texto Sem mascara aplicada
     const resultado: string[] = [];
@@ -123,72 +127,4 @@ export class InputMask
 
     return resultado.join("");
   }
-
-  /**
-   * Aplica a máscara customizada no valor usando os seguintes símbolos:
-   * 9 = número, A = letra, X = número ou letra, ? = opcional
-   */
-  //   private aplicarMascara(valor: string, mascara: string): string {
-  //     // eslint-disable-next-line no-debugger
-  //     debugger;
-  //     const resultado: string[] = [];
-  //     const textoLimpo = valor.replace(/\W/g, "");
-  //     let textoIndex = 0;
-  //     const mascaraArray = mascara.toUpperCase().split("");
-
-  //     for (let i = 0; i < mascaraArray.length; i++) {
-  //       const m = mascaraArray[i];
-
-  //       // Trata caractere opcional
-  //       let opcional = false;
-  //       if (mascaraArray[i + 1] === "?") {
-  //         opcional = true;
-  //       }
-
-  //       const c = textoLimpo[textoIndex];
-  //       if (!c) break;
-
-  //       const eNumero = /\d/.test(c);
-  //       const eLetra = /[a-zA-Z]/.test(c);
-
-  //       // Lógica para cada tipo de caractere
-  //       if (m === "9") {
-  //         if (eNumero) {
-  //           resultado.push(c);
-  //           textoIndex++;
-  //         } else if (!opcional) {
-  //           break;
-  //         }
-  //       } else if (m === "A") {
-  //         if (eLetra) {
-  //           resultado.push(c.toUpperCase());
-  //           textoIndex++;
-  //         } else if (!opcional) {
-  //           break;
-  //         }
-  //       } else if (m === "X") {
-  //         if (eNumero || eLetra) {
-  //           resultado.push(c.toUpperCase());
-  //           textoIndex++;
-  //         } else if (!opcional) {
-  //           break;
-  //         }
-  //       } else if (m === "?") {
-  //         // pula o "?" aqui porque ele foi tratado no anterior
-  //         continue;
-  //       } else {
-  //         // caractere fixo da máscara
-  //         resultado.push(m);
-  //         if (c === m) {
-  //           textoIndex++;
-  //         }
-  //       }
-
-  //       if (opcional) {
-  //         i++; // pula o "?" na máscara
-  //       }
-  //     }
-
-  //     return resultado.join("");
-  //   }
 }
