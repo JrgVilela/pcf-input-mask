@@ -1,0 +1,18 @@
+.j-pcf-input {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: #323130;
+  padding: 6px 10px;
+  border: 1px solid #8a8886;
+  border-radius: 4px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  transition: border-color 0.2s ease;
+}
+
+.j-pcf-input:focus {
+  border-color: #0078d4; /* Fluent primary */
+  box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.2);
+}
