@@ -1,5 +1,7 @@
 # 🎯 PCF InputMask
 
+![Feito com 💙 para a comunidade Power Platform](https://img.shields.io/badge/feito%20com%20💙-Power%20Platform-blueviolet?style=flat-square)
+
 A PCF (PowerApps Component Framework) custom control for Power Platform / Dynamics 365 that allows configurable input masks directly on form fields. Supports the following special mask characters:
 
 - `9` → digit
